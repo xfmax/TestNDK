@@ -8,6 +8,10 @@ package com.example.testndk;
  */
 public class Utils {
 
+    static {
+        System.loadLibrary("native-lib");
+    }
+
     public static native void write(String password);
 
     public static native String read();
