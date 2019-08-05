@@ -10,4 +10,6 @@ public class Utils {
 
     public static native void write(String password);
 
+    public static native String read();
+
 }

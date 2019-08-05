@@ -3,15 +3,6 @@
 
 std::string ab = "";
 
-
-extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_testndk_MainActivity_stringFromJNI(
-        JNIEnv *env,
-        jobject /* this */) {
-    std::string hello = ab;
-    return env->NewStringUTF(hello.c_str());
-}
-
 std::string jstring2str(JNIEnv* env, jstring jstr)
 {
     char*   rtn   =   NULL;
@@ -43,3 +34,10 @@ Java_com_example_testndk_Utils_write(JNIEnv *env, jclass type, jstring password_
     env->ReleaseStringUTFChars(password_, password);
 }
 
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_example_testndk_Utils_read(JNIEnv *env, jclass type) {
+
+    std::string hello = ab;
+    return env->NewStringUTF(hello.c_str());
+}
